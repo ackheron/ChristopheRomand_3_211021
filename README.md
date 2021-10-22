@@ -13,7 +13,7 @@ Un nouveau design basé sur les principes du Material Design vient d’être pro
 
 ---
 
-![logo](images/logo/ohmyfood.png)
+<p align="center"><img src="images/logo/ohmyfood.png" style="text-align:auto"/></p>
 
 ---
 
@@ -21,10 +21,10 @@ Vous faites partie des 4 heureux élus qui ont la chance de travailler sur ce be
 
 L’équipe se compose de :
 
-    Paul, le CTO du futur site ;
-    Fanny, l’UX designer recrutée pour mettre le site aux couleurs de Paris ;
-    Anissa, commerciale chargée de démarcher les restaurants ;
-        et vous, chargé du développement du site.
+- Paul, le CTO du futur site ;
+- Fanny, l’UX designer recrutée pour mettre le site aux couleurs de Paris ;
+- Anissa, commerciale chargée de démarcher les restaurants ;
+  - et vous, chargé du développement du site.
 
 Anissa est en plein démarchage pour ce projet, auprès des restaurateurs. Elle vous interpelle à la machine à café :
 
