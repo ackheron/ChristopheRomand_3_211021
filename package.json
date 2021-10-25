@@ -1,0 +1,21 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "## OpenClassRooms Formation Développeur Web",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "author": "Christophe Romand",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ackheron/christopheromand_3_211021.git"
+  },
+  "homepage": "https://gitlab.com/ackheron/christopheromand_3_211021#readme",
+  "bugs": {
+    "url": "https://gitlab.com/ackheron/christopheromand_3_211021/issues"
+  }
+}
