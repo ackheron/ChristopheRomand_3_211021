@@ -1,0 +1,24 @@
+@function radiusValue($corners: "all", $radius: $defaultRadius) {
+  @if $corners == "all" {
+    @return $radius;
+  } @else if $corners == "left" {
+    @return $radius 0 0 $radius;
+  } @else if $corners == "top" {
+    @return $radius $radius 0 0;
+  } @else if $corners == "right" {
+    @return 0 $radius $radius 0;
+  } @else if $corners == "bottom" {
+    @return 0 0 $radius $radius;
+  } @else {
+    @return $radius;
+  }
+}
+
+// Convert pixel values to rem
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}

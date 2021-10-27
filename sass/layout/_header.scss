@@ -1,0 +1,41 @@
+.header {
+  &__main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.75rem;
+  }
+  &__back {
+    position: absolute;
+    left: 20px;
+  }
+  &__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+      width: 1.875rem;
+    }
+    input {
+      width: 8.3125rem;
+      border: none;
+      font-size: 1rem;
+    }
+  }
+  &__explore {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 17.8125rem;
+    justify-content: space-around;
+    align-items: center;
+    .main-title {
+      font-size: 1.5rem;
+    }
+  }
+  &__banner {
+    height: 255px;
+    overflow: hidden;
+  }
+}
