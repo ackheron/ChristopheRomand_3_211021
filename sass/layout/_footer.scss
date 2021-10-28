@@ -1,20 +1,39 @@
 .footer {
+  color: white;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: baseline;
-  padding-left: 25px;
+  padding: 25px 25px;
   background: $color-bg-dark;
+  &__logo {
+    font-family: $font-logo;
+    // margin-right: 30px;
+    margin: 0 30px 20px 0;
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
-    // padding-right: 100px;
+    padding-right: 100px;
     li {
-      margin-right: 30px;
+      margin: 0 30px 10px 0;
+      a {
+        font-size: $font-size-sm * 1.1;
+        font-weight: $semibold;
+        color: white;
+      }
     }
     i {
       width: 16px;
+      font-size: $font-size-sm;
       margin-right: 10px;
+    }
+  }
+  @media (min-width: 900px) {
+    justify-content: center;
+    &__logo,
+    li {
+      margin: 0 30px 0 0;
     }
   }
 }
