@@ -9,6 +9,7 @@ body {
   width: 100%;
   max-width: 1440px;
   margin: auto;
+  font-family: $font-body;
   /* overflow-x: hidden; */
 }
 
@@ -22,4 +23,23 @@ img {
   display: block;
   position: relative;
   top: -50%;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2 {
+  font-size: $font-size-lg;
+}
+h3,
+p {
+  font-size: $font-size-base;
+  font-weight: $light;
 }

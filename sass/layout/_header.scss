@@ -6,6 +6,10 @@
     align-items: center;
     height: 3.75rem;
   }
+  &__logo {
+    font-family: $font-logo;
+    font-size: $font-size-xl;
+  }
   &__back {
     position: absolute;
     left: 20px;
@@ -14,28 +18,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $color-bg-medium;
     label {
       width: 1.875rem;
     }
     input {
-      width: 8.3125rem;
+      @include size(8.3126rem, 3.125rem);
       border: none;
-      font-size: 1rem;
+      font-size: $font-size-base;
     }
   }
   &__explore {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    padding: 40px 35px 60px 35px;
+    text-align: center;
     height: 17.8125rem;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    .main-title {
-      font-size: 1.5rem;
+    background-color: $color-bg-light;
+    h1 {
+      padding: 0 10px;
     }
+    p {
+      font-size: $font-size-base * 1.1;
+      font-weight: $light;
+    }
+    // .main-title {
+    //   font-size: 1.5rem;
+    // }
   }
   &__banner {
     height: 255px;
-    overflow: hidden;
+    // overflow: hidden;
+    &--palette {
+      @include size(100%, 280px);
+      background: url(/images/restaurants/paletteDuGout.jpg) center/cover;
+    }
+    &--fra {
+      @include size(100%, 280px);
+      background: url(/images/restaurants/Francaise.jpg) center/cover;
+    }
+    &--note {
+      @include size(100%, 280px);
+      background: url(/images/restaurants/noteEnchantée.jpg) center/cover;
+    }
+    &--sens {
+      @include size(100%, 280px);
+      background: url(/images/restaurants/deliceDesSens.jpg) center/cover;
+    }
   }
 }
