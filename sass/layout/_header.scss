@@ -53,19 +53,19 @@
     // overflow: hidden;
     &--palette {
       @include size(100%, 280px);
-      background: url(/images/restaurants/paletteDuGout.jpg) center/cover;
+      background: url(../../images/restaurants/paletteDuGout.jpg) center/cover;
     }
     &--fra {
       @include size(100%, 280px);
-      background: url(/images/restaurants/Francaise.jpg) center/cover;
+      background: url(../../images/restaurants/Francaise.jpg) center/cover;
     }
     &--note {
       @include size(100%, 280px);
-      background: url(/images/restaurants/noteEnchantée.jpg) center/cover;
+      background: url(../../images/restaurants/noteEnchantée.jpg) center/cover;
     }
     &--sens {
       @include size(100%, 280px);
-      background: url(/images/restaurants/deliceDesSens.jpg) center/cover;
+      background: url(../../images/restaurants/deliceDesSens.jpg) center/cover;
     }
   }
 }
