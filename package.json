@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./style/css/style.css",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./style/css/prefixed/"
+    "prefix": "postcss ./style/css/style.css --use autoprefixer -d ./style/css/prefixed/"
   },
   "author": "Christophe Romand",
   "license": "ISC",
