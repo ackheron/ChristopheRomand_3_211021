@@ -1,6 +1,9 @@
 .restaurants {
   background-color: $color-bg-light;
   padding: 50px 20px;
+  @media (min-width: 900px) {
+    padding: 30px 70px;
+  }
   &__title {
     padding-bottom: 20px;
   }
@@ -13,6 +16,7 @@
   }
   @media (min-width: 900px) {
     column-gap: 5rem;
+    row-gap: 3rem;
     padding: 65px 30px;
   }
 }
