@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     background-color: $color-bg-medium;
+    box-shadow: inset 0 2px 4px -3px $color-bg-dark;
     label {
       width: 1.875rem;
     }

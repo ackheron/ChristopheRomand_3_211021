@@ -4,13 +4,15 @@
   border-radius: 25px;
   text-align: center;
   cursor: pointer;
+  box-shadow: 2px 6px 20px rgb(153 153 153 / 60%);
   a {
     color: white;
     font-weight: $semibold;
   }
   @include gradient($color-secondary, $color-primary);
   &:hover {
-    @include gradient($color-primary, $color-secondary);
-    transition: 0.7s;
+    @include gradient(lighten($color-primary, 7), lighten($color-secondary, 7));
+    box-shadow: 2px 15px 15px rgb(153 153 153 / 80%);
+    // transition: 1.7s;
   }
 }
