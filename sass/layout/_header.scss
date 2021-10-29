@@ -26,6 +26,11 @@
       @include size(8.3126rem, 3.125rem);
       border: none;
       font-size: $font-size-base;
+      background-color: transparent;
+      color: black;
+      &:focus {
+        outline: none;
+      }
     }
   }
   &__explore {
@@ -52,19 +57,19 @@
     height: 255px;
     // overflow: hidden;
     &--palette {
-      @include size(100%, 280px);
+      @include size(100%, 300px);
       background: url(../../images/restaurants/paletteDuGout.jpg) center/cover;
     }
     &--fra {
-      @include size(100%, 280px);
+      @include size(100%, 300px);
       background: url(../../images/restaurants/Francaise.jpg) center/cover;
     }
     &--note {
-      @include size(100%, 280px);
+      @include size(100%, 300px);
       background: url(../../images/restaurants/noteEnchantée.jpg) center/cover;
     }
     &--sens {
-      @include size(100%, 280px);
+      @include size(100%, 300px);
       background: url(../../images/restaurants/deliceDesSens.jpg) center/cover;
     }
   }

@@ -22,11 +22,18 @@
     width: 20rem;
     text-align: center;
     background-color: #f6f6f6;
-    box-shadow: 0px 3px 20px rgb(153 153 153 / 30%);
+    box-shadow: 2px 6px 20px rgb(153 153 153 / 60%);
     padding: 27px 0;
-    // overflow-x: visible !important;
-    border-radius: 10px;
     margin-bottom: 25px;
+    @include border-radius(all, 20px);
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+      background: $color-primary-lighten;
+      i {
+        color: $color-primary;
+      }
+    }
     span {
       position: absolute;
       left: -11.5px;
@@ -56,6 +63,12 @@
 .restaurant {
   background: $color-bg-light;
   padding: 40px 15px 75px 15px;
+  @include border-radius(top, 40px);
+  .order {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 185px;
+  }
 }
 
 .heading-menu {
@@ -111,6 +124,7 @@
   margin-bottom: 1.25rem;
   background-color: white;
   padding: 15px;
+  @include border-radius(all, 15px);
   &__title {
     margin-bottom: 5px;
     font-size: $font-size-base * 1.1;
