@@ -7,3 +7,7 @@
   width: $width;
   height: $height;
 }
+
+@mixin gradient($from, $to) {
+  background: linear-gradient($from, $to);
+}
