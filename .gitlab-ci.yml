@@ -5,9 +5,9 @@ pages:
   script:
     - mkdir .public
     - cp -r * .public
-    - mv .public public
+    - mv .public publicGitLab
   artifacts:
     paths:
-      - public
+      - publicGitLab
   only:
     - master
