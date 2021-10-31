@@ -2,7 +2,7 @@
   border-radius: radiusValue($corners, $radius);
 }
 
-// mixin for easily setting the width and height (size) and an element.
+/* mixin permettant de définir facilement la largeur et la hauteur (taille) d'un élément. */
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
@@ -10,4 +10,25 @@
 
 @mixin gradient($from, $to) {
   background: linear-gradient($from, $to);
+}
+
+/* Mixin media queries pour la gestion responsive des breakpoints 
+
+ @param {String} $breakpoint - Breakpoint name
+@require $breakpoints */
+
+@mixin respond-to($breakpoint) {
+  // Si la clef existe dans la map "breakpoints""
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Affiche une media query basé sur la valeur
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // Si la clef n'est pas dans la map "$breakpoints"
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
 }
