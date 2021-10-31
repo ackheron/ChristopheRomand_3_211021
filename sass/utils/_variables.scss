@@ -1,4 +1,4 @@
-// colors
+/* Couleurs principales du site */
 
 $color-primary: #9356dc;
 $color-primary-lighten: lighten($color-primary, 35%);
@@ -6,9 +6,25 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-tertiary-darken: darken($color-tertiary, 40%);
 
+/* Couleurs de fonds et d'icônes */
+
 $color-bg-light: #f6f6f6;
 $color-bg-medium: #eaeaea;
 $color-bg-dark: #353535;
 $color-icons: #8d8d8d;
 
+/* Valeur de base utilisée dans la mixin border-radius */
+
 $defaultRadius: 5px;
+
+/* Taille par défaut utilisée dans pour la fonction rem-calc */
+
+$global-font-size: 100% !default;
+
+/* Table de de valeurs breakpoints associées à leurs clefs */
+
+$breakpoints: (
+  "small": 600px,
+  "medium": 900px,
+  "large": 1200px,
+) !default;

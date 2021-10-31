@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3.75rem;
+    height: rem-calc(60);
   }
   &__logo {
     font-family: $font-logo;
@@ -12,19 +12,19 @@
   }
   &__back {
     position: absolute;
-    left: 20px;
+    left: rem-calc(20);
   }
   &__location {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $color-bg-medium;
-    box-shadow: inset 0 2px 4px -3px $color-bg-dark;
+    box-shadow: inset rem-calc(0 2 4 -3) $color-bg-dark;
     label {
-      width: 1.875rem;
+      width: rem-calc(30);
     }
     input {
-      @include size(8.3126rem, 3.125rem);
+      @include size(rem-calc(133), rem-calc(50));
       border: none;
       font-size: $font-size-base;
       background-color: transparent;
@@ -37,40 +37,36 @@
   &__explore {
     display: flex;
     flex-direction: column;
-    padding: 40px 35px 60px 35px;
+    padding: rem-calc(40 35 60 35);
     text-align: center;
-    height: 17.8125rem;
+    height: rem-calc(285);
     justify-content: space-between;
     align-items: center;
     background-color: $color-bg-light;
     h1 {
-      padding: 0 10px;
+      padding: rem-calc(0 10);
     }
     p {
       font-size: $font-size-base * 1.1;
       font-weight: $light;
     }
-    // .main-title {
-    //   font-size: 1.5rem;
-    // }
   }
   &__banner {
-    height: 255px;
-    // overflow: hidden;
+    height: rem-calc(255);
     &--palette {
-      @include size(100%, 300px);
+      @include size(100%, rem-calc(300px));
       background: url(../../images/restaurants/paletteDuGout.jpg) center/cover;
     }
     &--fra {
-      @include size(100%, 300px);
+      @include size(100%, rem-calc(300px));
       background: url(../../images/restaurants/Francaise.jpg) center/cover;
     }
     &--note {
-      @include size(100%, 300px);
+      @include size(100%, rem-calc(300px));
       background: url(../../images/restaurants/noteEnchantée.jpg) center/cover;
     }
     &--sens {
-      @include size(100%, 300px);
+      @include size(100%, rem-calc(300px));
       background: url(../../images/restaurants/deliceDesSens.jpg) center/cover;
     }
   }

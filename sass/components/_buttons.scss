@@ -13,6 +13,5 @@
   &:hover {
     @include gradient(lighten($color-primary, 7), lighten($color-secondary, 7));
     box-shadow: 2px 15px 15px rgb(153 153 153 / 80%);
-    // transition: 1.7s;
   }
 }

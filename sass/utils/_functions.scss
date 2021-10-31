@@ -14,11 +14,87 @@
   }
 }
 
-// Convert pixel values to rem
+/*
+Supprime l'unité (par exemple px, em, rem) d'une valeur, en retournant uniquement le nombre.
+@param {Number} $num - Nombre dont il faut retirer l'unité.
+@returns {Number} Le même nombre, sans unité.
+*/
 
-@function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
 }
-@function rem($pxValue) {
-  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+
+/*
+Convertit une ou plusieurs valeurs de pixels en valeurs rem correspondantes.
+@param {Number|List} $values - Une ou plusieurs valeurs à convertir. Veillez à les séparer par des espaces et non par des virgules. Si vous devez convertir une liste séparée par des virgules, mettez la liste entre parenthèses.
+
+@param {Number} $base [null] - La valeur de base à utiliser lors du calcul du `rem`. Si ce paramètre est `null`, la fonction fera référence à la variable `$base-font-size` comme base.
+
+@returns {List} Une liste de valeurs converties.
+*/
+
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+
+  /* Si aucune base n'est définie, la taille de police '$global-font-size est utilisée. */
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  /* Si la taille de la police de base est un %, il faut la multiplier par 16px.
+En effet, une taille de police de 100 % = 16px dans la plupart des navigateurs. 
+*/
+  @if unit($base) == "%" {
+    $base: ($base / 100%) * 16px;
+  }
+
+  /* L'utilisation de rem comme base permet une mise à l'échelle correcte */
+  @if unit($base) == "rem" {
+    $base: strip-unit($base) * 16px;
+  }
+
+  @if $count == 1 {
+    @return -to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, -to-rem(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+/*
+Convertit une valeur de pixel en valeur rem correspondante. *Toute* valeur passée, quelle que soit l'unité, est supposée être une valeur de pixel. Par défaut, la valeur de pixel de base utilisée pour calculer la valeur rem est prise dans la variable `$global-font-size`.
+
+@param {Number} $value - Valeur de pixel à convertir.
+@param {Number} $base [null] - Base pour la conversion des pixels.
+
+@returns {Number} Un nombre en rems, calculé sur la base de la valeur donnée et de la valeur de pixel de base. Les valeurs rem sont passées telles quelles.
+*/
+
+@function -to-rem($value, $base: null) {
+  /* Vérifier si la valeur est un nombre */
+  @if type-of($value) != "number" {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  /* Transforme em en rem*/
+  @if unit($value) == "em" {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  /* Calculer rem si les unités pour $value n'est pas rem ou em */
+  @if unit($value) != "rem" {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  /* Transforme 0rem en 0 */
+  @if $value == 0rem {
+    $value: 0;
+  }
+
+  @return $value;
 }
