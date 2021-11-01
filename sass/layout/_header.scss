@@ -55,19 +55,19 @@
     height: rem-calc(255);
     &--palette {
       @include size(100%, rem-calc(300px));
-      background: url(../../images/restaurants/paletteDuGout.jpg) center/cover;
+      background: url(../../images/restaurants/paletteDuGout.webp) center/cover;
     }
     &--fra {
       @include size(100%, rem-calc(300px));
-      background: url(../../images/restaurants/Francaise.jpg) center/cover;
+      background: url(../../images/restaurants/Francaise.webp) center/cover;
     }
     &--note {
       @include size(100%, rem-calc(300px));
-      background: url(../../images/restaurants/noteEnchantée.jpg) center/cover;
+      background: url(../../images/restaurants/noteEnchantée.webp) center/cover;
     }
     &--sens {
       @include size(100%, rem-calc(300px));
-      background: url(../../images/restaurants/deliceDesSens.jpg) center/cover;
+      background: url(../../images/restaurants/deliceDesSens.webp) center/cover;
     }
   }
 }

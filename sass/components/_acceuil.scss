@@ -1,10 +1,9 @@
 .operation {
-  // display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: baseline;
   padding: rem-calc(50 20);
-  @media (min-width: 900px) {
+  @include responsive(medium) {
     padding: rem-calc(20 70);
   }
   &__title {
@@ -12,12 +11,19 @@
   }
   &__list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    @include responsive(large) {
+      padding: rem-calc(0 30);
+    }
   }
   &__btn {
     position: relative;
-    width: rem-calc(320);
+    width: 100%;
+    @include responsive(large) {
+      width: 30%;
+      padding: rem-calc(27 30);
+    }
     text-align: center;
     background-color: #f6f6f6;
     box-shadow: rem-calc(2 6 20) rgb(153 153 153 / 60%);
@@ -64,15 +70,15 @@
   }
 }
 .card-container {
-  @media (min-width: 600px) {
+  @include responsive(small) {
     display: grid;
     column-gap: rem-calc(35);
     grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: 900px) {
+  @include responsive(medium) {
     column-gap: rem-calc(80);
     row-gap: rem-calc(48);
-    padding: rem-calc(65 30);
+    padding: rem-calc(0 30);
   }
 }
 
