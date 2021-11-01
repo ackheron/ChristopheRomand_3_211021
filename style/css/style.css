@@ -126,6 +126,7 @@ p {
 }
 .header__location label {
   width: 1.875rem;
+  cursor: pointer;
 }
 .header__location input {
   width: 8.3125rem;
@@ -208,7 +209,7 @@ p {
   display: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .menu-container {
     display: grid;
     column-gap: 2.1875rem;
@@ -302,6 +303,7 @@ p {
 .operation__btn:hover {
   transform: scale(1.05);
   transition: 0.3s;
+  box-shadow: 0.125rem 0.9375rem 0.9375rem rgba(153, 153, 153, 0.8);
   background: #f2eafb;
 }
 .operation__btn:hover i {
@@ -323,6 +325,11 @@ p {
   color: #8d8d8d;
   left: 2.1875rem;
   font-size: 1.3rem;
+}
+@media (max-width: 345px) {
+  .operation__btn i {
+    display: none;
+  }
 }
 
 .restaurants {
@@ -435,7 +442,7 @@ p {
   font-size: 0.875rem;
   margin-right: 0.625rem;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .footer {
     justify-content: space-between;
   }

@@ -22,6 +22,7 @@
     box-shadow: inset rem-calc(0 2 4 -3) $color-bg-dark;
     label {
       width: rem-calc(30);
+      cursor: pointer;
     }
     input {
       @include size(rem-calc(133), rem-calc(50));

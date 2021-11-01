@@ -31,7 +31,7 @@
 }
 
 .menu-container {
-  @include responsive(large) {
+  @include responsive(jupiter) {
     display: grid;
     column-gap: rem-calc(35);
     grid-template-columns: repeat(3, 1fr);
