@@ -8,7 +8,6 @@
   background: $color-bg-dark;
   &__logo {
     font-family: $font-logo;
-    // margin-right: 30px;
     margin: rem-calc(0 30 20 0);
   }
   &__list {
@@ -22,6 +21,9 @@
         font-weight: $semibold;
         color: white;
       }
+      &:hover {
+        transform: scale(1.03);
+      }
     }
     i {
       width: rem-calc(16);
@@ -29,7 +31,7 @@
       margin-right: rem-calc(10);
     }
   }
-  @media (min-width: 900px) {
+  @include responsive(medium) {
     justify-content: space-between;
     &__list {
       padding-right: rem-calc(0);
