@@ -24,7 +24,16 @@ $global-font-size: 100% !default;
 /* Table de de valeurs breakpoints associées à leurs clefs */
 
 $breakpoints: (
-  "small": 600px,
-  "medium": 900px,
-  "large": 1200px,
+  "pluton": (
+    max-width: 345px,
+  ),
+  "terre": (
+    min-width: 600px,
+  ),
+  "jupiter": (
+    min-width: 900px,
+  ),
+  "soleil": (
+    min-width: 1200px,
+  ),
 ) !default;

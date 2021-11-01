@@ -31,7 +31,7 @@
       margin-right: rem-calc(10);
     }
   }
-  @include responsive(medium) {
+  @include responsive(terre) {
     justify-content: space-between;
     &__list {
       padding-right: rem-calc(0);
