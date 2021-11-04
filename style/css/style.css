@@ -102,6 +102,16 @@ p {
   box-shadow: 2px 15px 15px rgba(153, 153, 153, 0.8);
 }
 
+@keyframes dishes {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .header__main {
   position: relative;
   display: flex;
@@ -257,6 +267,22 @@ p {
 }
 .dish__caption i {
   display: none;
+}
+
+.slide-in-bottom01 {
+  animation: dishes 1s ease 0.3s 1 normal both;
+}
+
+.slide-in-bottom02 {
+  animation: dishes 1s ease 0.5s 1 normal both;
+}
+
+.slide-in-bottom03 {
+  animation: dishes 1s ease 0.7s 1 normal both;
+}
+
+.slide-in-bottom04 {
+  animation: dishes 1s ease 0.9s 1 normal both;
 }
 
 .operation {
