@@ -41,7 +41,6 @@ Convertit une valeur de pixel en valeur rem correspondante. *Toute* valeur passÃ
 html,
 body {
   width: 100%;
-  max-width: 1440px;
   margin: auto;
   font-family: "Roboto", sans-serif;
   /* overflow-x: hidden; */
@@ -112,6 +111,95 @@ p {
     transform: translateY(0);
   }
 }
+@keyframes check {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.loader {
+  perspective: 700px;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  z-index: 999;
+  animation: identifier 2.6s both;
+}
+
+.loader > span {
+  font-size: 250%;
+  font-family: "Shrikhand", cursive;
+  display: inline-block;
+  animation: flip 1s both;
+  transform-origin: 0 70%;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+
+@keyframes identifier {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes flip {
+  35% {
+    transform: rotateX(360deg);
+    visibility: visible;
+  }
+  100% {
+    transform: rotatex(360deg);
+    visibility: hidden;
+  }
+}
+.loader > span:nth-child(even) {
+  color: #9356dc;
+}
+
+.loader > span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.loader > span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loader > span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.loader > span:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.loader > span:nth-child(5) {
+  animation-delay: 0.9s;
+}
+
+.loader > span:nth-child(6) {
+  animation-delay: 1.1s;
+}
+
+.loader > span:nth-child(7) {
+  animation-delay: 1.3s;
+}
+
+.loader > span:nth-child(8) {
+  animation-delay: 1.5s;
+}
+
 .header__main {
   position: relative;
   display: flex;
@@ -150,6 +238,8 @@ p {
   outline: none;
 }
 .header__explore {
+  max-width: 1440px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   padding: 2.5rem 2.1875rem 3.75rem 2.1875rem;
@@ -191,6 +281,8 @@ p {
 }
 
 .container {
+  max-width: 1440px;
+  margin: auto;
   background: #f6f6f6;
   padding: 2.5rem 0.9375rem 4.6875rem 0.9375rem;
   border-radius: 2.5rem 2.5rem 0 0;
@@ -243,6 +335,7 @@ p {
 
 .dish {
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 4.375rem;
   margin-bottom: 1.25rem;
@@ -256,17 +349,47 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
 }
+.dish__caption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
 .dish__caption p {
   font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dish__caption span {
   font-size: 0.875rem;
-  position: absolute;
-  right: 1.25rem;
-  bottom: 0.625rem;
 }
-.dish__caption i {
-  display: none;
+.dish__caption--checkBox {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15%;
+  height: 100%;
+  background-color: #99e2d0;
+  font-size: 1.5rem;
+  color: white;
+  transform: translateX(100%);
+}
+.dish__caption--checkBox i {
+  transform: rotate(45deg);
+  margin: auto;
+}
+.dish:hover .dish__caption {
+  width: 85%;
+  transition: all 2s;
+}
+.dish:hover .dish__caption--checkBox {
+  transform: translateX(0%);
+  transition: transform 0.5s;
+}
+.dish:hover .dish__caption--checkBox i {
+  transform: rotate(360deg);
+  transition: transform 0.5s;
 }
 
 .slide-in-bottom01 {
@@ -286,6 +409,8 @@ p {
 }
 
 .operation {
+  max-width: 1440px;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: baseline;
@@ -359,6 +484,8 @@ p {
 }
 
 .restaurants {
+  max-width: 1440px;
+  margin: auto;
   background-color: #f6f6f6;
   padding: 3.125rem 1.25rem;
 }

@@ -36,6 +36,7 @@
     }
   }
   &__explore {
+    @include center-max;
     display: flex;
     flex-direction: column;
     padding: rem-calc(40 35 60 35);

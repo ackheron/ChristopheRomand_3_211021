@@ -1,4 +1,5 @@
 .operation {
+  @include center-max;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: baseline;
@@ -64,6 +65,7 @@
 }
 
 .restaurants {
+  @include center-max;
   background-color: $color-bg-light;
   padding: rem-calc(50 20);
   @include responsive(jupiter) {
