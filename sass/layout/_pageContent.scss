@@ -1,4 +1,6 @@
 .container {
+  max-width: 1440px;
+  margin: auto;
   background: $color-bg-light;
   padding: rem-calc(40 15 75 15);
   @include border-radius(top, rem-calc(40));
@@ -56,6 +58,7 @@
 
 .dish {
   position: relative;
+  overflow: hidden;
   @include size(100%, rem-calc(70));
   margin-bottom: rem-calc(20);
   background-color: white;
@@ -68,17 +71,48 @@
     font-weight: $semibold;
   }
   &__caption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     p {
       font-size: $font-size-sm;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     span {
       font-size: $font-size-sm;
-      position: absolute;
-      right: rem-calc(20);
-      bottom: rem-calc(10);
     }
-    i {
-      display: none;
+    &--checkBox {
+      display: flex;
+      position: absolute;
+      right: rem-calc(0);
+      bottom: rem-calc(0);
+      // padding: rem-calc(25) rem-calc(30);
+      width: 15%;
+      height: 100%;
+      background-color: $color-tertiary;
+      font-size: $font-size-lg;
+      color: white;
+      transform: translateX(100%);
+      i {
+        transform: rotate(45deg);
+        margin: auto;
+      }
+    }
+  }
+  &:hover {
+    .dish__caption {
+      width: 85%;
+      transition: all 2s;
+    }
+    .dish__caption--checkBox {
+      transform: translateX(0%);
+      transition: transform 0.5s;
+      i {
+        transform: rotate(360deg);
+        transition: transform 0.5s;
+      }
     }
   }
 }
