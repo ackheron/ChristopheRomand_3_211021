@@ -130,38 +130,39 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #eaeaea;
   position: fixed;
   z-index: 999;
-  animation: identifier 2.6s both;
+  animation: background 3s both;
 }
 
 .loader > span {
-  font-size: 250%;
+  font-size: 300%;
   font-family: "Shrikhand", cursive;
+  color: #353535;
   display: inline-block;
-  animation: flip 1s both;
+  animation: flip 3s none;
   transform-origin: 0 70%;
   transform-style: preserve-3d;
   text-align: center;
 }
 
-@keyframes identifier {
+@keyframes background {
   0% {
     visibility: visible;
+    opacity: 1;
   }
   100% {
+    opacity: 0.7;
     visibility: hidden;
   }
 }
 @keyframes flip {
   35% {
     transform: rotateX(360deg);
-    visibility: visible;
   }
   100% {
     transform: rotatex(360deg);
-    visibility: hidden;
   }
 }
 .loader > span:nth-child(even) {
@@ -294,6 +295,7 @@ p {
 }
 
 .heading-menu {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -305,13 +307,14 @@ p {
 }
 .heading-menu__heart {
   font-size: 1.5rem;
-  margin-right: 1.25rem;
+  cursor: pointer;
 }
-.heading-menu__heart i.fas.fa-heart {
-  display: none;
+.heading-menu__heart svg {
+  position: absolute;
+  right: 1.25rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .menu-container {
     display: grid;
     column-gap: 2.1875rem;
@@ -337,12 +340,13 @@ p {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 4.375rem;
+  min-height: 4.375rem;
   margin-bottom: 1.25rem;
   background-color: white;
   padding: 0.9375rem;
   border-radius: 15px;
   box-shadow: 0 0.1875rem 0.625rem rgba(153, 153, 153, 0.6);
+  cursor: pointer;
 }
 .dish__title {
   margin-bottom: 0.3125rem;
@@ -556,9 +560,20 @@ p {
   bottom: 2.1875rem;
   right: 1.25rem;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+.card__heart--empty {
+  z-index: 2;
+  opacity: 1;
+  background-color: #f6f6f6;
+}
+.card__heart--empty:hover {
+  transition: opacity 1000ms ease-in-out;
+  opacity: 0;
 }
 .card__heart--full {
-  display: none;
+  fill: url(#grad1);
+  z-index: 1;
 }
 
 .footer {

@@ -1,22 +1,3 @@
-// @keyframes dishes {
-//   0% {
-//     transform: translateY(10px);
-//   }
-//   30% {
-//     transform: translateY(30px);
-//     -webkit-animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
-//     animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
-//   }
-//   60% {
-//     transform: translateY(70px);
-//     -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-//     animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-//   }
-//   100% {
-//     transform: translateY(0);
-//   }
-// }
-
 @keyframes dishes {
   0% {
     opacity: 0;
@@ -50,26 +31,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
+  // background-color: rgba(255, 255, 255, 0.7);
+  background-color: $color-bg-medium;
   position: fixed;
   z-index: 999;
-  animation: identifier 2.6s both;
+  animation: background 3s both;
 }
 
 .loader > span {
-  font-size: 250%;
+  font-size: 300%;
   font-family: $font-logo;
+  color: $color-bg-dark;
   display: inline-block;
-  animation: flip 1s both;
+  animation: flip 3s none;
   transform-origin: 0 70%;
   transform-style: preserve-3d;
   text-align: center;
 }
-@keyframes identifier {
+@keyframes background {
   0% {
     visibility: visible;
+    opacity: 1;
   }
+
   100% {
+    opacity: 0.7;
     visibility: hidden;
   }
 }
@@ -77,11 +63,9 @@
 @keyframes flip {
   35% {
     transform: rotateX(360deg);
-    visibility: visible;
   }
   100% {
     transform: rotatex(360deg);
-    visibility: hidden;
   }
 }
 

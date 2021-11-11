@@ -131,9 +131,20 @@
       bottom: rem-calc(35);
       right: rem-calc(20);
       font-size: $font-size-lg;
+      cursor: pointer;
+    }
+    &--empty {
+      z-index: 2;
+      opacity: 1;
+      background-color: $color-bg-light;
+      &:hover {
+        transition: opacity 1000ms ease-in-out;
+        opacity: 0;
+      }
     }
     &--full {
-      display: none;
+      fill: url(#grad1);
+      z-index: 1;
     }
   }
 }
