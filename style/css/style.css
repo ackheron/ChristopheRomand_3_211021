@@ -30,7 +30,7 @@ Convertit une valeur de pixel en valeur rem correspondante. *Toute* valeur pass�
 
 @returns {Number} Un nombre en rems, calculé sur la base de la valeur donnée et de la valeur de pixel de base. Les valeurs rem sont passées telles quelles.
 */
-@import url("https:/i/fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 * {
   padding: 0;
