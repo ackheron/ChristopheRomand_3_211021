@@ -12,6 +12,7 @@
 }
 
 .heading-menu {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -22,18 +23,16 @@
   }
   &__heart {
     font-size: $font-size-lg;
-    margin-right: rem-calc(20);
-
-    i {
-      &.fas.fa-heart {
-        display: none;
-      }
+    cursor: pointer;
+    svg {
+      position: absolute;
+      right: rem-calc(20);
     }
   }
 }
 
 .menu-container {
-  @include responsive(jupiter) {
+  @include responsive(soleil) {
     display: grid;
     column-gap: rem-calc(35);
     grid-template-columns: repeat(3, 1fr);
@@ -59,12 +58,14 @@
 .dish {
   position: relative;
   overflow: hidden;
-  @include size(100%, rem-calc(70));
+  width: 100%;
+  min-height: rem-calc(70);
   margin-bottom: rem-calc(20);
   background-color: white;
   padding: rem-calc(15);
   @include border-radius(all, 15px);
   box-shadow: rem-calc(0 3 10) rgb(153 153 153 / 60%);
+  cursor: pointer;
   &__title {
     margin-bottom: rem-calc(5);
     font-size: $font-size-base * 1.1;
@@ -88,13 +89,14 @@
       position: absolute;
       right: rem-calc(0);
       bottom: rem-calc(0);
-      // padding: rem-calc(25) rem-calc(30);
       width: 15%;
       height: 100%;
       background-color: $color-tertiary;
       font-size: $font-size-lg;
       color: white;
-      transform: translateX(100%);
+      transform: translateX(
+        100%
+      ); // Décalage de la checkbox de 100% de sa largeur en mode hidden avec "overflow: hidden;" de .dish
       i {
         transform: rotate(45deg);
         margin: auto;
@@ -116,6 +118,8 @@
     }
   }
 }
+
+// Apparition progressive des plats avec assignation de leurs timings respectifs
 
 .slide-in-bottom01 {
   animation: dishes 1s ease 0.3s 1 normal both;
