@@ -18,15 +18,22 @@
   align-items: baseline;
   &__title {
     font-family: $font-logo;
-    font-size: $font-size-lg * 1.1;
+    font-size: $font-size-lg * 1.2;
+    font-weight: $semibold;
     margin-bottom: rem-calc(45);
+    @include text-wrap;
   }
   &__heart {
     font-size: $font-size-lg;
     cursor: pointer;
     svg {
       position: absolute;
+      top: rem-calc(8);
       right: rem-calc(20);
+      @include responsive(pluton) {
+        top: rem-calc(35);
+        left: 0;
+      }
     }
   }
 }
@@ -70,16 +77,18 @@
     margin-bottom: rem-calc(5);
     font-size: $font-size-base * 1.1;
     font-weight: $semibold;
+    @include text-wrap;
   }
   &__caption {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+
+    width: 100%;
+    transition: width 0.5s ease-in-out;
     p {
       font-size: $font-size-sm;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include text-wrap;
     }
     span {
       font-size: $font-size-sm;
@@ -97,23 +106,23 @@
       transform: translateX(
         100%
       ); // Décalage de la checkbox de 100% de sa largeur en mode hidden avec "overflow: hidden;" de .dish
+      transition: transform 0.5s ease-in-out;
       i {
         transform: rotate(45deg);
         margin: auto;
+        transition: transform 0.5s ease-in-out;
       }
     }
   }
   &:hover {
-    .dish__caption {
+    .dish__caption,
+    .dish__title {
       width: 85%;
-      transition: all 2s;
     }
     .dish__caption--checkBox {
       transform: translateX(0%);
-      transition: transform 0.5s;
       i {
         transform: rotate(360deg);
-        transition: transform 0.5s;
       }
     }
   }
