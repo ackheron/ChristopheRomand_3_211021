@@ -47,6 +47,9 @@
   @include responsive(terre) {
     font-size: 500%;
   }
+  @include responsive(pluton) {
+    font-size: 250%;
+  }
   font-family: $font-logo;
   color: $color-bg-dark;
   display: inline-block;

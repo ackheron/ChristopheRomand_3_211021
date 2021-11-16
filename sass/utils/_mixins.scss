@@ -6,6 +6,13 @@
   border-radius: radiusValue($corners, $radius);
 }
 
+/* mixin si l'intitulé de plat est trop long , il devra être rogné avec des points de suspension */
+@mixin text-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* mixin permettant de définir facilement la largeur et la hauteur (taille) d'un élément. */
 @mixin size($width, $height: $width) {
   width: $width;

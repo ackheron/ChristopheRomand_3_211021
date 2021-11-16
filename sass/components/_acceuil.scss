@@ -23,7 +23,7 @@
     width: 100%;
     @include responsive(soleil) {
       width: 30%;
-      padding: rem-calc(27 30);
+      padding: rem-calc(26 30);
     }
     text-align: center;
     background-color: #f6f6f6;
@@ -34,7 +34,7 @@
     cursor: pointer;
     &:hover {
       transform: scale(1.05);
-      transition: 0.3s;
+      transition: 0.7s;
       box-shadow: rem-calc(2 15 15) rgb(153 153 153 / 80%);
       background: $color-primary-lighten;
       i {
