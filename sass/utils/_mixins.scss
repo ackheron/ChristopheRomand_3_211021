@@ -1,7 +1,9 @@
+/* largeur max et auto centrage */
 @mixin center-max {
   max-width: 1440px;
   margin: auto;
 }
+/* définition des border-radius avec la fontion  radiusValue */
 @mixin border-radius($corners: "all", $radius: $defaultRadius) {
   border-radius: radiusValue($corners, $radius);
 }
@@ -23,9 +25,11 @@
   background: linear-gradient($from, $to);
 }
 
-/* Mixin media queries pour la gestion responsive des breakpoints 
+/*=============================================
+=            Mixin media queries pour la gestion responsive des breakpoints            =
+=============================================*/
 
- @param {String} $breakpoint - Breakpoint name
+/* :@param {String} $breakpoint - Breakpoint name
 @require $breakpoints */
 
 @mixin responsive($breakpoint) {
@@ -39,7 +43,7 @@
 
   // Si la clef n'est pas dans la map "$breakpoints"
   @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    @warn "Malheureusement, aucune valeur n'a pu être récupérée de  `#{$breakpoint}`. "
+        + "Les breakpoints disponibles sont: #{map-keys($breakpoints)}.";
   }
 }

@@ -1,3 +1,7 @@
+/*=============================================
+=            Fonction d'application d'une border radius selon sa position             =
+=============================================*/
+
 @function radiusValue($corners: "all", $radius: $defaultRadius) {
   @if $corners == "all" {
     @return $radius;
@@ -13,6 +17,10 @@
     @return $radius;
   }
 }
+
+/*=============================================
+=            Fonction conversion vers unité REM            =
+=============================================*/
 
 /*
 Supprime l'unité (par exemple px, em, rem) d'une valeur, en retournant uniquement le nombre.

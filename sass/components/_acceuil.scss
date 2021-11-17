@@ -1,3 +1,7 @@
+/*=============================================
+=            section Fonctionnement            =
+=============================================*/
+
 .operation {
   @include center-max;
   flex-wrap: wrap;
@@ -23,7 +27,7 @@
     width: 100%;
     @include responsive(soleil) {
       width: 30%;
-      padding: rem-calc(26 30);
+      padding: rem-calc(27 30);
     }
     text-align: center;
     background-color: #f6f6f6;
@@ -64,6 +68,10 @@
   }
 }
 
+/*=============================================
+=            section restaurants            =
+=============================================*/
+
 .restaurants {
   @include center-max;
   background-color: $color-bg-light;
@@ -87,6 +95,8 @@
     padding: rem-calc(0 30);
   }
 }
+
+/*----------  cards des 4 restaurants  ----------*/
 
 .card {
   position: relative;
@@ -125,26 +135,15 @@
     right: rem-calc(10);
     padding: rem-calc(5 10);
   }
+
+  /*----------  positionnement des 2 coeurs superposées  ----------*/
+
   &__heart {
     svg {
       position: absolute;
       bottom: rem-calc(35);
       right: rem-calc(20);
-      font-size: $font-size-lg;
       cursor: pointer;
-    }
-    &--empty {
-      z-index: 2;
-      opacity: 1;
-      background-color: $color-bg-light;
-      &:hover {
-        transition: opacity 1000ms ease-in-out;
-        opacity: 0;
-      }
-    }
-    &--full {
-      fill: url(#grad1);
-      z-index: 1;
     }
   }
 }
