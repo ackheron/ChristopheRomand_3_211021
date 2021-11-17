@@ -1,6 +1,5 @@
 .container {
-  max-width: 1440px;
-  margin: auto;
+  @include center-max;
   background: $color-bg-light;
   padding: rem-calc(40 15 75 15);
   @include border-radius(top, rem-calc(40));
@@ -23,8 +22,10 @@
     margin-bottom: rem-calc(45);
     @include text-wrap;
   }
+
+  /*----------  positionnement des 2 coeurs superposées  ----------*/
+
   &__heart {
-    font-size: $font-size-lg;
     cursor: pointer;
     svg {
       position: absolute;
@@ -126,19 +127,4 @@
       }
     }
   }
-}
-
-// Apparition progressive des plats avec assignation de leurs timings respectifs
-
-.slide-in-bottom01 {
-  animation: dishes 1s ease 0.3s 1 normal both;
-}
-.slide-in-bottom02 {
-  animation: dishes 1s ease 0.5s 1 normal both;
-}
-.slide-in-bottom03 {
-  animation: dishes 1s ease 0.7s 1 normal both;
-}
-.slide-in-bottom04 {
-  animation: dishes 1s ease 0.9s 1 normal both;
 }
